@@ -34,4 +34,38 @@
         npm install d3 --save
         npm install @types/d3 --save-dev
 
-- 
+- Initializing d3 and echarts instances
+
+
+        import { Component, ElementRef, ViewChild } from '@angular/core';
+        import * as D3 from 'd3/index';
+        import * as Echarts from 'echarts';
+
+        @Component({
+        selector: 'app-root',
+        templateUrl: './app.component.html',
+        styleUrls: ['./app.component.scss']
+        })
+        export class AppComponent{
+        title = 'app works!';
+        @ViewChild('mapRef') mapRef;
+        d3Element: any;
+        echartElement: any;
+        d3Svg: any;
+        constructor(private element: ElementRef) {
+            
+            //this.echartElement.setOptions();
+        }
+
+        ngAfterViewInit(){
+        this.d3Element = D3.select(this.element.nativeElement);
+        this.d3Svg = this.d3Element.append('svg')
+            .attr('width', "200px")
+            .attr('height', "200px")
+            .append('g')
+            .attr('transform', 'translate(100px, 100px)');
+            this.echartElement = Echarts.init(this.mapRef.nativeElement);  
+        }
+
+
+        }
