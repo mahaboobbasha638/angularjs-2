@@ -8,7 +8,7 @@
         ng new pcs1 --style=sass // for sass
         ng new pcs --style=scss  // for scss
 
-- add Bootstrap
+- First install Bootstrap from npm
 
         npm install bootstrap@next
 
@@ -18,11 +18,35 @@
 
 - Building and starting project
 
-        ng server
+        ng serve
+
+
+- Then add the needed script files to apps[0].scripts:
+
+        "scripts": [
+            "../node_modules/jquery/dist/jquery.js",
+            "../node_modules/tether/dist/js/tether.js",
+            "../node_modules/bootstrap/dist/js/bootstrap.js"
+        ],
+
+- Finally add the Bootstrap CSS to the apps[0].styles array:
+
+        "styles": [
+            "../node_modules/bootstrap/dist/css/bootstrap.css",
+            "styles.css"
+        ],
 
 - Adding font awesome style for icons
 
         npm install font-awesome --save
+
+- Add font-awesome 
+
+        "styles": [
+            "../node_modules/bootstrap/dist/css/bootstrap.css",
+            "styles.css",
+            "../node_modules/font-awesome/scss/font-awesome.scss"
+        ],
 
 - Adding echarts
 
@@ -285,7 +309,7 @@
             <div (myClick)="clicked=$event">click me</div>
 
             @Output('myClick') clicks = new EventEmitter<string>(); //  @Output(alias) propertyName = ...
-            We can also alias property names in the inputs and outputs arrays
+            OR
             @Directive({
                 outputs: ['clicks:myClick']  // propertyName:alias
             })
