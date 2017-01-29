@@ -94,6 +94,31 @@
 
         }
 
+- Updating Latest angular cli
+
+        npm uninstall -g angular-cli
+        npm cache clean
+        npm install -g angular-cli@latest
+
+- Updating exising project with latest code
+
+        rm -rf node_modules dist # use rmdir on Windows
+        npm install --save-dev angular-cli@latest
+        npm install
+        ng init
+
+- adding jquery ui library
+
+        npm install jqueryui --save
+        npm install @types/jqueryui --save-dev 
+
+- adding jquery migrate library (needed for jqueryui)
+
+        npm install jquery-migrate --save
+
+- adding sass modules
+        npm install node-sass --save-dev
+
 - For one way binding
 
         <h2>{{hero.name}}</h2>
@@ -329,4 +354,34 @@
 
         <button [style.color] = "isSpecial ? 'red' : 'green'">
 
-- 
+- service module
+
+        import { Injectable, Inject } from '@angular/core';
+        import { Http, Response, Headers, RequestOptions } from '@angular/http';
+        import {Observable} from 'rxjs/Rx';
+
+        @Injectable()
+        export class SuggestionsService {
+
+                results: any;
+                private url = '../api.php?call=Controller&type=function';  // URL to web api
+                constructor (private http: Http) {}
+
+                getData(prefix) : Observable<JSON> {
+                var thisVew = this;
+                
+                return this.http.get(this.url+"&prefix="+prefix)
+                        .map(this.formatData)
+                        .catch(this.handleError);
+                }
+
+                private formatData(res: Response) {
+                        let results = res.json();
+                        return results || { };
+                }
+
+                private handleError(error: any) {
+                        return Observable.throw(error.json().error || 'Server error');
+                }
+
+        }
