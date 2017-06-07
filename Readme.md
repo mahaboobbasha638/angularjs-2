@@ -16,10 +16,36 @@
 
         ng build
 
+- Building the project with production environment
+
+        # these are equivalent
+        ng build --target=production --environment=prod
+        ng build --prod --env=prod
+        ng build --prod
+        # and so are these
+        ng build --target=development --environment=dev
+        ng build --dev --e=dev
+        ng build --dev
+        ng build
+
+- htaccess rewrite options for proper angular routing
+
+        Options +FollowSymLinks
+
+        <ifModule mod_rewrite.c>
+                RewriteEngine On
+                RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteCond %{REQUEST_FILENAME} !-d
+                RewriteCond %{REQUEST_URI} !index
+                RewriteRule (.*) index.html [L]
+        </ifModule>
+
+  - [setup link](https://github.com/mgechev/angular-seed/wiki/Deploying-prod-build-to-Apache-2)
+
+
 - Building and starting project
 
         ng serve
-
 
 - Then add the needed script files to apps[0].scripts:
 
