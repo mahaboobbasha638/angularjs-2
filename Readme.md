@@ -5,8 +5,9 @@
 
 - creatting project with sass style
 
-        ng new pcs1 --style=sass // for sass
-        ng new pcs --style=scss  // for scss
+        ng new project1 --style=sass // for sass
+        ng new project --style=scss  // for scss
+        ng new project --style=scss --routing=true // off adding routing module 
 
 - First install Bootstrap from npm
 
