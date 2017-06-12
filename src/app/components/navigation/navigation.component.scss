@@ -1,0 +1,11 @@
+nav a {
+    height: 100%;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    float: left;
+}
+nav a:hover, nav a.active {
+    background-color: #289dcc;
+}
