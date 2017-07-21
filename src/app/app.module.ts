@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './components/home/home.component';
 import { Tab1Component } from './components/tab1/tab1.component';
+import { Tab2Component } from './components/tab2/tab2.component';
+import { Tab3Component } from './components/tab3/tab3.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { Tab1Component } from './components/tab1/tab1.component';
     HeaderComponent,
     NavigationComponent,
     HomeComponent,
-    Tab1Component
+    Tab1Component,
+    Tab2Component,
+    Tab3Component
   ],
   imports: [
     BrowserModule,
