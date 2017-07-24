@@ -15,11 +15,12 @@ const routes: Routes = [
       { path: 'tab2', component: Tab2Component, children: [] },
       { path: 'tab3', component: Tab3Component, 
         children: [
-          {path: 'type/:idname', component:Tab3Component}
+          {path: ':idname', component:Tab3Component}
         ] 
       }
     ] 
   },
+  { path: '**', redirectTo: 'home'}
   /*{ path: 'tab1/:id', component: Tab1Component, children: []},
   { path: 'tab1/:id/:name', component: Tab1Component, children: []}*/
 ];
