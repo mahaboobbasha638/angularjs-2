@@ -258,7 +258,7 @@
 
 # Custome Directives
 
- - Structaral directives
+ - Structural directives
 
                 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
