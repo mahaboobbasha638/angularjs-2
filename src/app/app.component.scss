@@ -1,0 +1,24 @@
+.header_component{
+    height: 100px;
+    width: 100%;
+    background-image: url('../images/home/header_bg.png'); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navigation_component{
+    width: 100%;
+    height: 46px;
+    background-color: #232323;
+    border-top: 4px solid #289dcc;
+}
+
+.main_component{
+    width: 100%;
+    height: calc(100% - 146px);
+    display: block;
+    overflow-y: auto;
+    padding: 0 50px;
+}

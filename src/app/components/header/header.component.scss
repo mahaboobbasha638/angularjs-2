@@ -1,0 +1,14 @@
+.header_main {
+    height: 100%;
+    display: table;
+    width: 100%;
+
+    span{
+        display: table-cell;
+        vertical-align: middle;
+        font-family: roboto-light;
+        color: white;
+        font-size: 30px;
+        padding-left: 50px;
+    }
+}

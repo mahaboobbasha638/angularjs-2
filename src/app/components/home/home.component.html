@@ -1,0 +1,5 @@
+<div class="tdoc_file_list" *hideElement="activeTab=='content'" [bgColor]="'red'">
+  <a *ngFor="let each_file of tdocHtml" href="home;file={{each_file}}">{{each_file}}</a>
+</div>
+<div class="tdoc_file_content" *hideElement="activeTab=='list'" [innerHtml]="tdocHtmlContent">
+</div>
