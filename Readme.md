@@ -235,6 +235,26 @@
         </div>
         </div>
 
+- Resize and Scroll Events
+
+        ngOnInit() {
+                window.addEventListener('resize', this.resize, true);
+                window.addEventListener('scroll', this.scroll, true);
+        }
+
+        resize = (): void => {
+                this.productComponent.adjustProductNavigationWidth();
+        }
+
+        scroll = (): void => {
+                this.adjustScrollBarWidth();
+        };
+
+        ngOnDestroy(){
+                window.removeEventListener('scroll', this.scroll, true);
+                window.removeEventListener('resize', this.resize, true);
+        }
+
 # Structural directives
 - There are three kinds of Angular directives:
 
