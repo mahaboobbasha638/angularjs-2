@@ -243,7 +243,7 @@
         }
 
         resize = (): void => {
-                this.productComponent.adjustProductNavigationWidth();
+                this.adjustWidth();
         }
 
         scroll = (): void => {
@@ -254,7 +254,7 @@
                 window.removeEventListener('scroll', this.scroll, true);
                 window.removeEventListener('resize', this.resize, true);
         }
-        
+
 
 # Structural directives
 - There are three kinds of Angular directives:
